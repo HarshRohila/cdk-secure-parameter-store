@@ -41,7 +41,7 @@ class SecureParameterProvider extends CoreConstruct {
    */
   public static getOrCreate(scope: Construct, props: ISecureParameterStoreProps) {
     const stack = Stack.of(scope);
-    const id = 'rohilaharsh.cdk.custom-resources.secureParameter-provider';
+    const id = 'cdk-secure-parameter-store.secureParameter-provider';
     const x =
       (Node.of(stack).tryFindChild(id) as SecureParameterProvider) ||
       new SecureParameterProvider(stack, id, props);

@@ -2,9 +2,9 @@ import * as cdk from '@aws-cdk/core';
 import { SecureParameterStore } from './index';
 
 const app = new cdk.App();
-const stack = new cdk.Stack(app, 'MyTestStack');
+const stack = new cdk.Stack(app, 'TestSecureParameterStoreStack');
 
-new SecureParameterStore(stack, 'HarshSecureParameter', {
-  name: 'harsh-secure-parameter',
-  value: 'secret',
+new SecureParameterStore(stack, 'TestSecureParameterStore', {
+  name: 'cdk-secure-parameter-store-ParameterName',
+  value: 'Secret Parameter Value',
 });
