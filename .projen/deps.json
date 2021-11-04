@@ -43,10 +43,6 @@
       "type": "build"
     },
     {
-      "name": "aws-sdk",
-      "type": "build"
-    },
-    {
       "name": "eslint",
       "type": "build"
     },
@@ -114,6 +110,10 @@
       "type": "build"
     },
     {
+      "name": "aws-sdk",
+      "type": "bundled"
+    },
+    {
       "name": "@aws-cdk/aws-iam",
       "version": "^1.95.2",
       "type": "peer"
@@ -166,6 +166,10 @@
     {
       "name": "@aws-cdk/custom-resources",
       "version": "^1.95.2",
+      "type": "runtime"
+    },
+    {
+      "name": "aws-sdk",
       "type": "runtime"
     }
   ],

@@ -43,7 +43,6 @@
     "@types/node": "^14.17.0",
     "@typescript-eslint/eslint-plugin": "^5.3.0",
     "@typescript-eslint/parser": "^5.3.0",
-    "aws-sdk": "^2.1021.0",
     "eslint": "^8.1.0",
     "eslint-import-resolver-node": "^0.3.6",
     "eslint-import-resolver-typescript": "^2.5.0",
@@ -74,9 +73,12 @@
     "@aws-cdk/aws-lambda": "^1.95.2",
     "@aws-cdk/aws-logs": "^1.95.2",
     "@aws-cdk/core": "^1.95.2",
-    "@aws-cdk/custom-resources": "^1.95.2"
+    "@aws-cdk/custom-resources": "^1.95.2",
+    "aws-sdk": "^2.1021.0"
   },
-  "bundledDependencies": [],
+  "bundledDependencies": [
+    "aws-sdk"
+  ],
   "keywords": [
     "cdk"
   ],

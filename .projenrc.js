@@ -15,16 +15,16 @@ const project = new AwsCdkConstructLibrary({
     '@aws-cdk/aws-logs',
   ],
   // cdkTestDependencies: undefined,  /* AWS CDK modules required for testing. */
-  // deps: [],                        /* Runtime dependencies of this module. */
+  deps: ['aws-sdk'],
   // description: undefined,          /* The description is just a string that helps people understand the purpose of the package. */
   devDeps: [
-    'aws-sdk',
     '@aws-cdk/core',
     '@aws-cdk/aws-lambda',
     '@aws-cdk/aws-iam',
     '@aws-cdk/custom-resources',
     '@aws-cdk/aws-logs',
   ],
+  bundledDeps: ['aws-sdk'],
   scripts: {
     'dev:deploy': "yarn build && npx cdk deploy --app='./lib/integ.default.js'",
   },
