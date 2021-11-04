@@ -7,11 +7,27 @@ const project = new AwsCdkConstructLibrary({
   name: 'cdk-secure-parameter-store',
   repositoryUrl: 'https://github.com/harsh.rohila/cdk-secure-parameter-store.git',
 
-  // cdkDependencies: undefined,      /* Which AWS CDK modules (those that start with "@aws-cdk/") does this library require when consumed? */
+  cdkDependencies: [
+    '@aws-cdk/core',
+    '@aws-cdk/aws-lambda',
+    '@aws-cdk/aws-iam',
+    '@aws-cdk/custom-resources',
+    '@aws-cdk/aws-logs',
+  ],
   // cdkTestDependencies: undefined,  /* AWS CDK modules required for testing. */
   // deps: [],                        /* Runtime dependencies of this module. */
   // description: undefined,          /* The description is just a string that helps people understand the purpose of the package. */
-  // devDeps: [],                     /* Build dependencies for this module. */
+  devDeps: [
+    'aws-sdk',
+    '@aws-cdk/core',
+    '@aws-cdk/aws-lambda',
+    '@aws-cdk/aws-iam',
+    '@aws-cdk/custom-resources',
+    '@aws-cdk/aws-logs',
+  ],
+  scripts: {
+    'dev:deploy': "yarn build && npx cdk deploy --app='./lib/integ.default.js'",
+  },
   // packageName: undefined,          /* The "name" in package.json. */
   // release: undefined,              /* Add release management to this project. */
 });
