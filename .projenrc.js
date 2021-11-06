@@ -24,6 +24,7 @@ const project = new AwsCdkConstructLibrary({
     '@aws-cdk/custom-resources',
     '@aws-cdk/aws-logs',
   ],
+  keywords: ['cdk', 'parameter store', 'secure parameter store'],
   bundledDeps: ['aws-sdk'],
   scripts: {
     'dev:deploy': "yarn build && npx cdk deploy --app='./lib/integ.default.js'",
