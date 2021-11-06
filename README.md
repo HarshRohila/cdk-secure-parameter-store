@@ -1,4 +1,4 @@
-# Secure Paramter Store
+# Secure Parameter Store
 
 ## Why
 

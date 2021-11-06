@@ -3,6 +3,7 @@ import { Code, Runtime, Function } from '@aws-cdk/aws-lambda';
 import { Construct as CoreConstruct, CustomResource, Stack } from '@aws-cdk/core';
 import { Provider } from '@aws-cdk/custom-resources';
 import * as AWS from 'aws-sdk';
+import * as path from 'path';
 import { Construct, Node } from 'constructs';
 
 let nameGenerator: ReturnType<typeof newResourceNameGenerator>;
@@ -57,10 +58,11 @@ class SecureParameterProvider extends CoreConstruct {
 
     const lambdaName = nameGenerator.getPrefixedName('handler');
     const customResourceProviderName = nameGenerator.getPrefixedName('customResourceProvider');
+    const handlerPath = path.join(path.dirname(__dirname), 'functions');
 
     const onEvent = new Function(scope, lambdaName, {
       handler: 'index.handler',
-      code: Code.fromAsset('functions'),
+      code: Code.fromAsset(handlerPath),
       runtime: Runtime.NODEJS_14_X,
       initialPolicy: [
         new PolicyStatement({
