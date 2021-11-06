@@ -80,7 +80,9 @@
     "aws-sdk"
   ],
   "keywords": [
-    "cdk"
+    "cdk",
+    "parameter store",
+    "secure parameter store"
   ],
   "main": "lib/index.js",
   "license": "Apache-2.0",
