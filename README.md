@@ -2,7 +2,7 @@
 
 ## Why
 
-AWS CDK not having a way to create secure paramter store, and it recommends secret manager, which is costly.
+AWS CDK not having a way to create secure parameter store, and it recommends secret manager, which is costly.
 This construct provides a way to create secure parameter store using CDK Custom Resource
 
 ## Usage

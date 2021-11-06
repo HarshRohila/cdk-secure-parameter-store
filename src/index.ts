@@ -1,9 +1,9 @@
+import * as path from 'path';
 import { PolicyStatement } from '@aws-cdk/aws-iam';
 import { Code, Runtime, Function } from '@aws-cdk/aws-lambda';
 import { Construct as CoreConstruct, CustomResource, Stack } from '@aws-cdk/core';
 import { Provider } from '@aws-cdk/custom-resources';
 import * as AWS from 'aws-sdk';
-import * as path from 'path';
 import { Construct, Node } from 'constructs';
 
 let nameGenerator: ReturnType<typeof newResourceNameGenerator>;
