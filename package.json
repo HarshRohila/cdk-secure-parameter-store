@@ -2,7 +2,7 @@
   "name": "cdk-secure-parameter-store",
   "repository": {
     "type": "git",
-    "url": "https://github.com/harsh.rohila/cdk-secure-parameter-store.git"
+    "url": "https://github.com/HarshRohila/cdk-secure-parameter-store.git"
   },
   "scripts": {
     "build": "npx projen build",

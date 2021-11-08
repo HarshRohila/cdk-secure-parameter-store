@@ -5,7 +5,7 @@ const project = new AwsCdkConstructLibrary({
   cdkVersion: '1.95.2',
   defaultReleaseBranch: 'master',
   name: 'cdk-secure-parameter-store',
-  repositoryUrl: 'https://github.com/harsh.rohila/cdk-secure-parameter-store.git',
+  repositoryUrl: 'https://github.com/HarshRohila/cdk-secure-parameter-store.git',
 
   cdkDependencies: [
     '@aws-cdk/core',
