@@ -11,7 +11,7 @@ Similar to how other CDK constructs are used
 
 ```typescript
 new SecureParameterStore(stack, 'MySecureParameterStore', {
-  name: 'Parameter Name',
+  name: 'ParameterName',
   value: 'Parameter Value',
 });
 ```
