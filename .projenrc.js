@@ -29,6 +29,7 @@ const project = new AwsCdkConstructLibrary({
   scripts: {
     'dev:deploy': "yarn build && npx cdk deploy --app='./lib/integ.default.js'",
   },
+  gitignore: ['cdk.out'],
   // packageName: undefined,          /* The "name" in package.json. */
   // release: undefined,              /* Add release management to this project. */
 });

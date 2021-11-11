@@ -67,7 +67,9 @@ class SecureParameterProvider extends CoreConstruct {
       initialPolicy: [
         new PolicyStatement({
           actions: ['ssm:*'],
-          resources: [`arn:aws:ssm:*:*:parameter/${name}`],
+          resources: [
+            `arn:aws:ssm:${Stack.of(scope).region}:${Stack.of(scope).account}:parameter/${name}`,
+          ],
         }),
       ],
       environment: {
