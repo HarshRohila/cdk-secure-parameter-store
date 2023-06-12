@@ -1,13 +1,13 @@
 import * as path from 'path';
-import { PolicyStatement } from '@aws-cdk/aws-iam';
-import { Code, Runtime, Function } from '@aws-cdk/aws-lambda';
-import { Construct as CoreConstruct, CustomResource, Stack } from '@aws-cdk/core';
-import { Provider } from '@aws-cdk/custom-resources';
+import { CustomResource, Stack } from 'aws-cdk-lib';
+import { PolicyStatement } from 'aws-cdk-lib/aws-iam';
+import { Code, Runtime, Function } from 'aws-cdk-lib/aws-lambda';
+import { Provider } from 'aws-cdk-lib/custom-resources';
 import * as AWS from 'aws-sdk';
 import { Construct, Node } from 'constructs';
 
 let nameGenerator: ReturnType<typeof newResourceNameGenerator>;
-export class SecureParameterStore extends CoreConstruct {
+export class SecureParameterStore extends Construct {
   constructor(scope: Construct, id: string, props: ISecureParameterStoreProps) {
     super(scope, id);
 
@@ -36,7 +36,7 @@ function newResourceNameGenerator(prefix: string) {
   };
 }
 
-class SecureParameterProvider extends CoreConstruct {
+class SecureParameterProvider extends Construct {
   /**
    * Returns the singleton provider.
    */
