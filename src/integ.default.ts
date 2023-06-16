@@ -4,7 +4,12 @@ import { SecureParameterStore } from './index';
 const app = new cdk.App();
 const stack = new cdk.Stack(app, 'TestSecureParameterStoreStack');
 
-new SecureParameterStore(stack, 'TestSecureParameterStore', {
-  name: 'cdk-secure-parameter-store-ParameterName',
-  value: 'Secret Parameter Value',
+new SecureParameterStore(stack, 'TestSecureParameterStoreA', {
+  name: 'cdk-secure-parameter-store-ParameterNameA',
+  value: 'Secret Parameter Value A',
+});
+
+new SecureParameterStore(stack, 'TestSecureParameterStoreB', {
+  name: 'cdk-secure-parameter-store-ParameterNameB',
+  value: 'Secret Parameter Value B',
 });
