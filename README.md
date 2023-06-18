@@ -24,6 +24,10 @@ For more info refer aws [docs](https://docs.aws.amazon.com/AWSCloudFormation/lat
 
 ## For Contributors
 
+### Build
+
+- `npx projen build`
+
 ### Deploy
 
 - `yarn dev:deploy`
