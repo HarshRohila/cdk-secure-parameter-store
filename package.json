@@ -35,6 +35,7 @@
     "organization": false
   },
   "devDependencies": {
+    "@aws-sdk/client-ssm": "^3.354.0",
     "@types/jest": "^27",
     "@types/node": "^16",
     "@typescript-eslint/eslint-plugin": "^5",
@@ -62,12 +63,6 @@
     "aws-cdk-lib": "^2.59.0",
     "constructs": "^10.0.5"
   },
-  "dependencies": {
-    "aws-sdk": "^2.1395.0"
-  },
-  "bundledDependencies": [
-    "aws-sdk"
-  ],
   "resolutions": {
     "@types/babel__traverse": "7.18.2",
     "@types/prettier": "2.6.0"

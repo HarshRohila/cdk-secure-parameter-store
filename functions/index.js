@@ -1,4 +1,4 @@
-const AWS = require('aws-sdk');
+const { SSMClient, DeleteParameterCommand, PutParameterCommand } = require('@aws-sdk/client-ssm');
 
 const PARAMETER_NAME = process.env.PARAMETER_NAME;
 const PARAMETER_VALUE = process.env.PARAMETER_VALUE;
@@ -19,24 +19,31 @@ exports.handler = (event) => {
   }
 };
 
+function getSsmClient() {
+  return new SSMClient();
+}
+
 async function onDelete() {
-  const params = {
-    Name: PARAMETER_NAME,
+  const client = getSsmClient();
+
+  const input = {
+    Name: PARAMETER_NAME.Name,
   };
-
-  const ssm = new AWS.SSM();
-
-  return ssm.deleteParameter(params).promise();
+  const command = new DeleteParameterCommand(input);
+  return await client.send(command);
 }
 
 async function onCreate() {
-  const ssm = new AWS.SSM();
-  const params = {
+  const client = getSsmClient();
+
+  const input = {
     Name: PARAMETER_NAME,
     Value: PARAMETER_VALUE,
-    Overwrite: true,
     Type: 'SecureString',
+    Overwrite: true,
   };
 
-  return ssm.putParameter(params).promise();
+  const command = new PutParameterCommand(input);
+
+  return await client.send(command);
 }

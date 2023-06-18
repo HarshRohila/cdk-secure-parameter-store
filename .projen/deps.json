@@ -1,6 +1,10 @@
 {
   "dependencies": [
     {
+      "name": "@aws-sdk/client-ssm",
+      "type": "build"
+    },
+    {
       "name": "@types/jest",
       "version": "^27",
       "type": "build"
@@ -101,10 +105,6 @@
     {
       "name": "typescript",
       "type": "build"
-    },
-    {
-      "name": "aws-sdk",
-      "type": "bundled"
     },
     {
       "name": "@types/babel__traverse",

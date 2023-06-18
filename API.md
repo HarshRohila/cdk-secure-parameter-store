@@ -18,7 +18,7 @@ new SecureParameterStore(stack, 'MySecureParameterStore', {
 
 ## How it works
 
-This construt creates a [Lambda backed Custom Resource](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-custom-resources-lambda.html), the lambda is using aws-sdk to create and delete parameter store, whenever Custom Resource is created and destroyed
+This construt creates a [Lambda backed Custom Resource](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-custom-resources-lambda.html), the lambda is using AWS SDK to create and delete parameter store, whenever Custom Resource is created and destroyed
 
 For more info refer aws [docs](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-custom-resources.html)
 
@@ -152,19 +152,9 @@ The tree node.
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#cdk-secure-parameter-store.ISecureParameterStoreProps.property.name">name</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdk-secure-parameter-store.ISecureParameterStoreProps.property.value">value</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-secure-parameter-store.ISecureParameterStoreProps.property.name">name</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdk-secure-parameter-store.ISecureParameterStoreProps.property.resourceNamesPrefix">resourceNamesPrefix</a></code> | <code>string</code> | *No description.* |
-
----
-
-##### `name`<sup>Required</sup> <a name="name" id="cdk-secure-parameter-store.ISecureParameterStoreProps.property.name"></a>
-
-```typescript
-public readonly name: string;
-```
-
-- *Type:* string
 
 ---
 
@@ -172,6 +162,16 @@ public readonly name: string;
 
 ```typescript
 public readonly value: string;
+```
+
+- *Type:* string
+
+---
+
+##### `name`<sup>Optional</sup> <a name="name" id="cdk-secure-parameter-store.ISecureParameterStoreProps.property.name"></a>
+
+```typescript
+public readonly name: string;
 ```
 
 - *Type:* string
