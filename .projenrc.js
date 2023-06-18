@@ -1,31 +1,17 @@
-const { AwsCdkConstructLibrary } = require('projen');
-const project = new AwsCdkConstructLibrary({
+const { awscdk } = require('projen');
+const project = new awscdk.AwsCdkConstructLibrary({
   author: 'Harsh Rohila',
   authorAddress: 'rohilaharsh@gmail.com',
-  cdkVersion: '1.95.2',
+  cdkVersion: '2.59.0', /* First release of 2023 */
   defaultReleaseBranch: 'master',
   name: 'cdk-secure-parameter-store',
   repositoryUrl: 'https://github.com/HarshRohila/cdk-secure-parameter-store.git',
-
-  cdkDependencies: [
-    '@aws-cdk/core',
-    '@aws-cdk/aws-lambda',
-    '@aws-cdk/aws-iam',
-    '@aws-cdk/custom-resources',
-    '@aws-cdk/aws-logs',
-  ],
-  // cdkTestDependencies: undefined,  /* AWS CDK modules required for testing. */
-  deps: ['aws-sdk'],
-  // description: undefined,          /* The description is just a string that helps people understand the purpose of the package. */
-  devDeps: [
-    '@aws-cdk/core',
-    '@aws-cdk/aws-lambda',
-    '@aws-cdk/aws-iam',
-    '@aws-cdk/custom-resources',
-    '@aws-cdk/aws-logs',
-  ],
-  keywords: ['cdk', 'parameter store', 'secure parameter store'],
   bundledDeps: ['aws-sdk'],
+  // cdkTestDependencies: undefined,  /* AWS CDK modules required for testing. */
+  peerDeps: ['constructs', 'aws-cdk-lib'],
+  // description: undefined,          /* The description is just a string that helps people understand the purpose of the package. */
+  // devDeps: ['aws-cdk-lib'],
+  keywords: ['cdk', 'parameter store', 'secure parameter store'],
   scripts: {
     'dev:deploy': "yarn build && npx cdk deploy --app='./lib/integ.default.js'",
   },
