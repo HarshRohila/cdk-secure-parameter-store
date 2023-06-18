@@ -1,8 +1,11 @@
 const { awscdk } = require('projen');
+
+const cdkVersion = '2.59.0'; /* First release of 2023 */
+
 const project = new awscdk.AwsCdkConstructLibrary({
   author: 'Harsh Rohila',
   authorAddress: 'rohilaharsh@gmail.com',
-  cdkVersion: '2.59.0', /* First release of 2023 */
+  cdkVersion,
   defaultReleaseBranch: 'master',
   name: 'cdk-secure-parameter-store',
   repositoryUrl: 'https://github.com/HarshRohila/cdk-secure-parameter-store.git',
@@ -16,6 +19,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
     'dev:deploy': "yarn build && npx cdk deploy --app='./lib/integ.default.js'",
   },
   gitignore: ['cdk.out'],
+  devDeps: [`cdk@${cdkVersion}`],
   // packageName: undefined,          /* The "name" in package.json. */
   // release: undefined,              /* Add release management to this project. */
 });
