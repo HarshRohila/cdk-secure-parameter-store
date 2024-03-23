@@ -1,9 +1,9 @@
 import * as path from 'path';
+import type { Parameter } from '@aws-sdk/client-ssm';
 import { CustomResource, Stack } from 'aws-cdk-lib';
 import { PolicyStatement } from 'aws-cdk-lib/aws-iam';
 import { Code, Runtime, Function } from 'aws-cdk-lib/aws-lambda';
 import { Provider } from 'aws-cdk-lib/custom-resources';
-import * as AWS from 'aws-sdk';
 import { Construct } from 'constructs';
 
 let nameGenerator: ReturnType<typeof newResourceNameGenerator>;
@@ -61,7 +61,7 @@ class SecureParameterProvider extends Construct {
     const onEvent = new Function(scope, lambdaName, {
       handler: 'index.handler',
       code: Code.fromAsset(handlerPath),
-      runtime: Runtime.NODEJS_14_X,
+      runtime: Runtime.NODEJS_18_X,
       initialPolicy: [
         new PolicyStatement({
           actions: ['ssm:*'],
@@ -71,7 +71,7 @@ class SecureParameterProvider extends Construct {
         }),
       ],
       environment: {
-        PARAMETER_NAME: name,
+        PARAMETER_NAME: name!,
         PARAMETER_VALUE: value,
       },
     });
@@ -83,7 +83,7 @@ class SecureParameterProvider extends Construct {
 }
 
 export interface ISecureParameterStoreProps {
-  name: AWS.SSM.Types.ParameterName;
+  name: Parameter['Name'];
   value: string;
   resourceNamesPrefix?: string;
 }

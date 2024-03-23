@@ -18,7 +18,7 @@ new SecureParameterStore(stack, 'MySecureParameterStore', {
 
 ## How it works
 
-This construt creates a [Lambda backed Custom Resource](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-custom-resources-lambda.html), the lambda is using aws-sdk to create and delete parameter store, whenever Custom Resource is created and destroyed
+This construt creates a [Lambda backed Custom Resource](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-custom-resources-lambda.html), the lambda is using AWS SDK to create and delete parameter store, whenever Custom Resource is created and destroyed
 
 For more info refer aws [docs](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-custom-resources.html)
 
