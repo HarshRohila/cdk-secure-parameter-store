@@ -56,7 +56,7 @@ class SecureParameterProvider extends Construct {
     const lambdaName = nameGenerator.getPrefixedName('handler');
     const customResourceProviderName = nameGenerator.getPrefixedName('customResourceProvider');
     const handlerPath = path.join(path.dirname(__dirname), 'functions');
-    const iamResourceName = name.startsWith("/") ? name.substring(1) : name;
+    const iamResourceName = name && name.startsWith('/') ? name.substring(1) : name;
 
     const onEvent = new Function(scope, lambdaName, {
       handler: 'index.handler',
@@ -66,7 +66,9 @@ class SecureParameterProvider extends Construct {
         new PolicyStatement({
           actions: ['ssm:*'],
           resources: [
-            `arn:aws:ssm:${Stack.of(scope).region}:${Stack.of(scope).account}:parameter/${iamResourceName}`,
+            `arn:aws:ssm:${Stack.of(scope).region}:${
+              Stack.of(scope).account
+            }:parameter/${iamResourceName}`,
           ],
         }),
       ],
