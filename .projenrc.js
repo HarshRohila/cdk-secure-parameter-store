@@ -1,6 +1,6 @@
 const { awscdk } = require('projen');
 
-const cdkVersion = '2.59.0'; /* First release of 2023 */
+const cdkVersion = '2.133.0'; /* First release of 2023 */
 
 const project = new awscdk.AwsCdkConstructLibrary({
   author: 'Harsh Rohila',

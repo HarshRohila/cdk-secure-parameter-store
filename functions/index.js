@@ -27,8 +27,9 @@ async function onDelete() {
   const client = getSsmClient();
 
   const input = {
-    Name: PARAMETER_NAME.Name,
+    Name: PARAMETER_NAME,
   };
+
   const command = new DeleteParameterCommand(input);
   return await client.send(command);
 }
