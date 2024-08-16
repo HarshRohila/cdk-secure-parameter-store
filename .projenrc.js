@@ -23,5 +23,5 @@ const project = new awscdk.AwsCdkConstructLibrary({
   // packageName: undefined,          /* The "name" in package.json. */
   // release: undefined,              /* Add release management to this project. */
 });
-project.npmrc.addConfig('auto-install-peers', 'false');
+project.npmrc.addConfig('auto-install-peers', 'true');
 project.synth();
