@@ -1,4 +1,4 @@
-const { awscdk } = require('projen');
+const { awscdk, javascript } = require('projen');
 
 const cdkVersion = '2.133.0'; /* First release of 2023 */
 
@@ -7,6 +7,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   authorAddress: 'rohilaharsh@gmail.com',
   cdkVersion,
   defaultReleaseBranch: 'master',
+  packageManager: javascript.NodePackageManager.PNPM,
   name: 'cdk-secure-parameter-store',
   repositoryUrl: 'https://github.com/HarshRohila/cdk-secure-parameter-store.git',
   // cdkTestDependencies: undefined,  /* AWS CDK modules required for testing. */
